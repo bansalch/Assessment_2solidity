@@ -1,5 +1,48 @@
 # Assessment_2solidity
 My second metacrafters assessment!!!
-Code Project Overview
+# MyToken Smart Contract
 
-This smart contract is an implementation of the core logic for an ERC-20-like token on the Ethereum Blockchain. It is called "Dogecoin" with an abbreviation "DOGE." It defines a basic token system where there are public variables to hold some important information, such as name, abbreviation, and total supply; and a mapping structure maintaining the balance of each address holding the said token. At the core of the contract lie two major functions: `mint` and `burn`. The `mint` function allows for the creation of new tokens by increasing the total supply and also adding the number of tokens minted to the balance at the address specified by the `to` field. Thus, it is greatly involved in the distribution of tokens during initial issuance or as rewards. The `burn` function enables the destruction of tokens, thereby reducing the total supply and debiting it from the address provided, ensuring that this number of tokens is actually taken out of circulation. An essential property that makes the burn function important is the one preventing an address from burning more tokens than are held in the address. Here is simply an extremely effective contract that provides the basic framework to ensure control over a cryptocurrency, distribution of tokens, and a correct token economy balancing act with orchestrated minting and burning processes.
+This Ethereum smart contract implements a basic ERC-20 token with minting and burning functionalities.
+
+## Contract Details
+
+- *Token Name*: Dogecoin
+- *Token Abbreviation*: DOGE
+- *Total Supply*: Tracks the total number of tokens.
+
+## Features
+
+- *Public Variables*:
+  - tokenName: Name of the token.
+  - tokenAbbrv: Abbreviation.
+  - totalSupply: Total token count.
+
+- *Balances Mapping*:
+  - Maps addresses to balances.
+
+- *Mint Function*:
+  - Mints tokens to a specified address.
+  - *Parameters*:
+    - _add: Address to mint tokens to.
+    - _value: Number of tokens to mint.
+  - *Effects*:
+    - Increases totalSupply and the address balance.
+
+- *Burn Function*:
+  - Burns tokens from a specified address.
+  - *Parameters*:
+    - _add: Address to burn tokens from.
+    - _value: Number of tokens to burn.
+  - *Effects*:
+    - Decreases totalSupply and the address balance.
+  - *Requirement*:
+    - The address balance must be greater than or equal to _value.
+
+## Requirements
+
+- Solidity version: ^0.8.0
+- SPDX-License-Identifier: MIT
+
+## License
+
+This project is licensed under the MIT License.
